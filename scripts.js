@@ -6,7 +6,6 @@ const images = [
 ];
 
 let currentIndex = 0;
-
 const heroBackground = document.querySelector('.hero-background');
 
 // Function to change background image
@@ -21,18 +20,15 @@ changeBackground();
 // Change background every 5 seconds
 setInterval(changeBackground, 5000);
 
-
-// When the user scrolls, run the highlightNav function
+// Highlight navigation links on scroll
 window.addEventListener('scroll', highlightNav);
 
 function highlightNav() {
-    // Get all sections
     const sections = document.querySelectorAll('section');
     const navLinks = document.querySelectorAll('nav ul li a');
 
     let currentSection = '';
 
-    // Determine the current section by comparing scroll position with section offsets
     sections.forEach(section => {
         const sectionTop = section.offsetTop;
         const sectionHeight = section.clientHeight;
@@ -42,16 +38,15 @@ function highlightNav() {
         }
     });
 
-    // Remove active class from all nav links
     navLinks.forEach(link => {
         link.classList.remove('active');
-        // Add active class to the nav link corresponding to the current section
         if (link.getAttribute('href').includes(currentSection)) {
             link.classList.add('active');
         }
     });
 }
 
+// Smooth scroll to sections
 document.querySelectorAll('nav ul li a').forEach(anchor => {
     anchor.addEventListener('click', function(e) {
         e.preventDefault();
@@ -65,23 +60,32 @@ document.querySelectorAll('nav ul li a').forEach(anchor => {
     });
 });
 
-let slideIndex = 0;
-showSlides();
+let currentSlideIndex = 0; // Current index for the slideshow
+const slides = document.querySelectorAll('.work-box'); // Select all work boxes
+const totalSlides = slides.length; // Total number of slides
+const imagesToShow = 3; // Number of images to show at a time
 
-function showSlides() {
-    const slides = document.getElementsByClassName("mySlides");
-    slideIndex++;
-    if (slideIndex > slides.length) {
-        slideIndex = 1; // Reset to the first slide
+function displaySlides() {
+    // Hide all slides
+    slides.forEach((slide) => {
+        slide.style.display = 'none'; // Hide all initially
+    });
+
+    // Display the current set of images
+    for (let i = 0; i < imagesToShow; i++) {
+        const indexToShow = (currentSlideIndex + i) % totalSlides; // Calculate index for the current slide
+        slides[indexToShow].style.display = 'block'; // Show the current set of slides
     }
 
-    for (let i = 0; i < slides.length; i++) {
-        slides[i].style.display = "none"; // Hide all slides
-    }
+    // Move to the next set of images
+    currentSlideIndex = (currentSlideIndex + imagesToShow) % totalSlides; // Increment the index by the number of images to show
 
-    slides[slideIndex - 1].style.display = "block"; // Show the current slide
-    setTimeout(showSlides, 5000); // Change image every 5 seconds
+    // Automatically show the next set of images every 5 seconds
+    setTimeout(displaySlides, 5000); // Change images every 5 seconds
 }
+
+// Start the slideshow
+displaySlides();
 
 
 

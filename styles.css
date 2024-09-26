@@ -195,12 +195,33 @@ nav ul li a.active {
     100% { opacity: 1; transform: translateY(0); }
 }
 
-/* Sections */
+
+/* Sections*/
 section {
     padding: 80px 20px;
     text-align: center;
     background-color: #f4f4f4; /* Consistent background color */
 }
+
+/* Global Box Model Adjustment */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/* Section Styling for Consistent Layout */
+section {
+    position: relative;                      /* Ensures stacking is based on document flow */
+    margin: px 0;                         /* Adds space between sections */
+    padding: 20px 0;                        /* Adds padding within each section */
+    background-color: rgba(255, 255, 255, 0.9); /* Slight transparency for smooth transition */
+    transition: background-color 0.3s ease-in-out; /* Smooth transition for background color */
+    overflow: visible;                       /* Ensures that content won't be cut off */
+    height: auto;                           /* Allows the section to grow based on its content */
+    z-index: 1;                             /* Ensure sections are stacked correctly */
+}
+
 
 #about, #services, #portfolio, #contact {
     margin-top: 50px;
@@ -265,166 +286,164 @@ h2 {
 
 /* Team Section Styles */
 .team-section {
-    padding: 40px 20px; /* Add padding around the team section */
-    background-color: rgba(255, 255, 255, 0.9); /* Consistent background color */
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); /* Add shadow for depth */
-    text-align: center; /* Center text in the section */
+    text-align: center; /* Center the section title */
+    margin: 55px 0; /* Add space above and below the section */
 }
 
-.team-section h3 {
-    font-size: 2.5em; /* Increase font size for the heading */
-    margin-bottom: 30px; /* Space below the heading */
-    color: #333; /* Dark text for better readability */
-}
-
+/* Team Container Styles */
 .team-container {
-    display: flex; /* Use flexbox for layout */
-    justify-content: center; /* Center items horizontally */
-    flex-wrap: wrap; /* Allow wrapping on smaller screens */
-    gap: 40px; /* Space between team members */
-    padding: 0 20px; /* Add padding */
+    display: flex;
+    flex-wrap: wrap; /* Allow members to wrap to the next line */
+    justify-content: center; /* Center the team members */
 }
 
+/* Individual Team Member Styles */
 .team-member {
-    background-color: white; /* Background for each team member */
-    padding: 20px;
-    border-radius: 8px; /* Rounded corners */
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Shadow for depth */
-    width: 200px; /* Set a fixed width for team members */
-    text-align: center; /* Center text in team member section */
+    background-color: #ffffff; /* Set a background color */
+    border-radius: 15px; /* Round the edges */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* Floating effect */
+    margin: 15px; /* Space between team members */
+    padding: 20px; /* Inner spacing */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transitions */
+    width: 250px; /* Fixed width for each member box */
 }
 
-.team-photo {
-    width: 100%; /* Make the image responsive */
-    height: auto; /* Maintain aspect ratio */
-    border-radius: 50%; /* Circular image */
-    margin-bottom: 15px; /* Space below the image */
+/* Pop-out and Hover Effect */
+.team-member:hover {
+    transform: translateY(-10px); /* Pop out effect */
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3); /* Enhance shadow on hover */
 }
+
+/* Team Member Photo */
+.team-photo {
+    width: 100%; /* Make photo responsive */
+    border-radius: 50%; /* Round photo */
+    margin-bottom: 15px; /* Space below the photo */
+}
+
+/* Team Member Title */
+h4 {
+    font-weight: bold; /* Bold title */
+    margin: 10px 0 5px; /* Margin for spacing */
+}
+
+/* Team Member Description */
+.team-member p {
+    color: #777; /* Slightly lighter text */
+}
+
 
 /* What We Do Section */
-#what-we-do {
-    padding: 80px 20px;
-    background-color: rgba(255, 255, 255, 0.9);
-    text-align: center;
-    border-radius: 15px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+
+.what-we-do-content {
+    display: flex; /* Use flexbox for horizontal layout */
+    justify-content: space-between; /* Space out items evenly */
+    margin-top: 20px; /* Space above the section */
 }
 
-#what-we-do h2 {
-    font-size: 2.5em;
-    margin-bottom: 20px;
-    color: #333;
+.item {
+    flex: 1; /* Each item takes up equal space */
+    text-align: center; /* Center text */
+    padding: 20px; /* Padding for spacing */
+    background-color: #f9f9f9; /* Light background color */
+    border: 1px solid #ddd; /* Optional border */
+    border-radius: 15px; /* Increased rounded corners for a softer look */
+    margin: 10px; /* Margin around items */
+    transition: transform 0.3s; /* Transition for hover effect */
 }
 
-#what-we-do .intro-text {
-    font-size: 1.2em;
-    max-width: 800px;
-    margin: 0 auto 40px auto;
-    line-height: 1.6;
-    color: #666;
-    padding: 0 20px;
+.item i {
+    font-size: 40px; /* Icon size */
+    color: #007bff; /* Icon color */
+    margin-bottom: 10px; /* Space below the icon */
 }
 
-.info-sections {
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    gap: 40px;
-    padding: 20px 0;
+.item h3 {
+    font-size: 20px; /* Heading size */
+    margin: 10px 0; /* Space above and below heading */
 }
 
-.info-box {
-    position: relative; /* Set position to relative to position the pseudo-element */
-    background-color: white;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    flex: 1;
-    max-width: 300px;
-    text-align: left;
-    transition: transform 0.3s ease; /* Smooth transition for transform */
+.item:hover {
+    transform: scale(1.05); /* Slightly enlarge item on hover */
 }
 
-.info-box::before {
-    content: ''; /* Create an empty pseudo-element */
-    position: absolute;
-    top: -10px; /* Adjust position to create space for highlight */
-    left: -10px;
-    right: -10px;
-    bottom: -10px;
-    background-color: rgba(255, 102, 0, 0); /* Initial background color (invisible) */
-    border-radius: 15px; /* Match border radius */
-    transition: background-color 0.3s ease; /* Smooth transition for background color */
-    z-index: -1; /* Ensure it stays behind the content */
+/* Responsive Design */
+@media (max-width: 768px) {
+    .what-we-do-content {
+        flex-direction: column; /* Stack items vertically on small screens */
+    }
 }
 
-.info-box:hover {
-    transform: translateY(-10px); /* Lift effect on hover */
+
+/* Our Work Section */
+
+/* Container for the work boxes */
+.work-container {
+    display: flex; /* Use flexbox for horizontal layout */
+    justify-content: space-between; /* Space out boxes evenly */
+    margin: 20px 0; /* Margin around the container */
 }
 
-.info-box:hover::before {
-    background-color: rgba(255, 102, 0, 0.2); /* Light highlight color around the box */
+/* Individual work box */
+.work-box {
+    flex: 0 0 32%; /* Each box takes up approximately one-third of the container */
+    box-sizing: border-box; /* Include padding/border in width */
+    text-align: center; /* Center text below images */
+    padding: 15px; /* Increased padding for more spacing */
+    background-color: #f9f9f9; /* Light background color */
+    border: 1px solid #ddd; /* Optional border */
+    border-radius: 8px; /* Rounded corners */
+    transition: transform 0.3s; /* Transition for hover effect */
 }
 
-.info-box h3 {
-    font-size: 1.5em;
-    color: #333;
-    margin-bottom: 15px;
-}
-
-.info-box p {
-    font-size: 1em;
-    color: #666;
-    line-height: 1.6;
-}
-
-.slideshow-container {
-    position: relative;
-    max-width: 800px; /* Adjust this width as needed */
-    margin: auto; /* Center the container */
-    overflow: hidden; /* Hide overflow for a neat look */
-}
-
-.mySlides {
-    display: none; /* Hide slides by default */
-    text-align: center; /* Center the text */
-}
-
-.slide-image {
-    width: 100%; /* Make images responsive */
+/* Image styling */
+.work-image {
+    width: 100%; /* Full width of the box */
     height: auto; /* Maintain aspect ratio */
-    max-width: 100%; /* Ensure the images do not exceed their container */
-    max-height: 400px; /* Set a fixed height for the images */
-    object-fit: cover; /* Ensure the images cover the area without distortion */
+    max-height: 250px; /* Increased max height for images */
+    object-fit: cover; /* Cover entire area */
 }
 
-.description {
-    margin-top: 10px; /* Space between image and description */
-    font-size: 16px; /* Font size for the description */
+/* Hover effect for work boxes */
+.work-box:hover {
+    transform: scale(1.05); /* Slightly enlarge box on hover */
 }
 
-.prev, .next {
-    cursor: pointer;
-    position: absolute;
-    top: 50%;
-    width: auto;
-    padding: 16px;
-    color: white;
-    font-weight: bold;
-    font-size: 18px;
-    transition: 0.6s ease;
-    border-radius: 0 3px 3px 0;
-    user-select: none;
+/* Organizations and locations section */
+
+.org-locations {
+    margin-top: 20px; 
+    text-align: center; /* Center text */
+    background-color: #f1f1f1; /* Light background */
+    padding: 20px; /* Padding around the section */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Soft shadow */
 }
 
-.next {
-    right: 0;
-    border-radius: 3px 0 0 3px;
+.org-locations h3 {
+    font-size: 24px; /* Larger heading */
+    font-weight: bold; /* Bold text */
+    margin-bottom: 15px; /* Space below heading */
 }
 
-.prev:hover, .next:hover {
-    background-color: rgba(0, 0, 0, 0.8);
+.org-locations ul {
+    list-style-type: none; /* Remove default bullets */
+    padding: 0; /* Remove padding */
 }
+
+.org-locations li {
+    padding: 10px; /* Padding for list items */
+    border-bottom: 1px solid #ddd; /* Separator line */
+}
+
+.org-locations li:hover {
+    background-color: #e0e0e0; /* Highlight on hover */
+}
+
+
+
+
+
 
 /* Contact Form */
 
