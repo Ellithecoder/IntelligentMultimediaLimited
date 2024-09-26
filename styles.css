@@ -1,0 +1,504 @@
+/* Importing a modern Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+/* Global Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    background-color: #f4f4f4; /* Consistent background color */
+}
+
+/* Navigation Bar */
+nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: rgba(51, 51, 51, 0.9); /* Slight transparency for modern effect */
+    padding: 10px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Modern shadow */
+}
+
+/* Logo alignment fix */
+nav .logo {
+    position: absolute;
+    left: 20px;
+    top: 50%; /* Center vertically */
+    transform: translateY(-50%); /* Adjust for vertical centering */
+    display: flex;
+    align-items: center; /* Ensures proper vertical alignment */
+}
+
+nav .logo img {
+    height: 50px;
+    width: auto;
+}
+
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: inline-flex;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.1em;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #ff6600;
+}
+
+/* Highlighted link when the section is active */
+nav ul li a.active {
+    color: #ff6600; /* Highlight color */
+    font-weight: 700; /* Make the active link bold */
+}
+
+/* Wrapper for contact info */
+.contact-info {
+    position: absolute;
+    right: 20px; /* Adjust this value based on how far from the right edge you want it */
+    top: 50%;
+    transform: translateY(-50%); /* Vertically center the contact info */
+    display: flex;
+    gap: 15px;
+}
+
+/* Contact info styling */
+.contact-item {
+    color: #fff;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+}
+
+.contact-item i {
+    margin-right: 5px; /* Space between icon and text */
+}
+
+.contact-item:hover {
+    color: #ff6600; /* Hover effect */
+}
+
+
+/* Hero Section */
+.hero {
+    height: 100vh;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+}
+
+/* Hero Section Background */
+.hero-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    transition: background-image 1s ease-in-out; /* Smooth transition */
+    z-index: 0; /* Ensure it is behind the overlay and content */
+}
+
+/* Gradient overlay for modern look */
+.hero-overlay {
+    background: linear-gradient(to bottom right, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.2));
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1; /* Ensure overlay is on top of the background */
+}
+
+/* Center the hero content vertically */
+.hero-content {
+    position: relative;
+    z-index: 2; /* Ensure content is above the overlay */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    padding: 0 20px;
+}
+
+/* Title styling */
+.hero h1 {
+    font-size: 3em; /* Larger for a modern, bold look */
+    font-weight: 600;
+    margin: 0;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    animation: fadeInDown 1s ease-in-out; /* Text animation */
+}
+
+/* Subtitle styling */
+.hero h3 {
+    font-size: 1.5em;
+    margin: 10px 0;
+    font-weight: 300;
+    animation: fadeInUp 1.5s ease-in-out; /* Text animation */
+}
+
+/* Button styling */
+.hero .btn {
+    padding: 12px 25px;
+    background-color: #ff6600;
+    color: white;
+    border: none;
+    text-decoration: none;
+    font-size: 1.2em;
+    border-radius: 30px; /* Rounded edges for modern look */
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Modern shadow */
+    margin-top: 20px;
+}
+
+.hero .btn:hover {
+    background-color: #e65c00;
+    transform: translateY(-5px); /* Slight lift on hover */
+}
+
+/* Text animations */
+@keyframes fadeInDown {
+    0% { opacity: 0; transform: translateY(-50px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInUp {
+    0% { opacity: 0; transform: translateY(50px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+/* Sections */
+section {
+    padding: 80px 20px;
+    text-align: center;
+    background-color: #f4f4f4; /* Consistent background color */
+}
+
+#about, #services, #portfolio, #contact {
+    margin-top: 50px;
+}
+
+h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+/* Who We Are Section */
+#about {
+    background-color: rgba(255, 255, 255, 0.9); /* Transparent white background */
+    padding: 80px 20px; /* Ensure consistent padding */
+    text-align: center;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* Add shadow for depth */
+    border-radius: 15px; /* Smooth edges */
+}
+
+#about h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    color: #333; /* Dark text for better readability */
+}
+
+#about p {
+    font-size: 1.2em; /* Increase font size for better readability */
+    line-height: 1.6; /* Improve line spacing */
+    color: #666; /* Softer color for text */
+    max-width: 800px; /* Limit width for better readability */
+    margin: 0 auto; /* Center the paragraph */
+    padding: 0 20px; /* Add some padding */
+}
+
+/* Flexbox for layout */
+.about-container {
+    display: flex; /* Use flexbox for layout */
+    flex-direction: column; /* Stack text vertically */
+    align-items: center; /* Center items horizontally */
+    justify-content: center; /* Center items vertically */
+    padding: 0 20px; /* Add padding */
+}
+
+/* IML Info Section Styling */
+.iml-info h3 {
+    font-size: 1.8em;
+    margin-top: 40px;
+    color: #333; /* Consistent color */
+}
+
+.iml-info ul {
+    list-style-type: disc;
+    padding-left: 20px; /* Add padding to indent the list */
+    font-size: 1.2em; /* Slightly larger text for readability */
+    color: #666; /* Softer text color */
+    line-height: 1.8; /* Space out the list items */
+}
+
+.iml-info ul li {
+    margin-bottom: 10px; /* Space between each list item */
+}
+
+/* Team Section Styles */
+.team-section {
+    padding: 40px 20px; /* Add padding around the team section */
+    background-color: rgba(255, 255, 255, 0.9); /* Consistent background color */
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); /* Add shadow for depth */
+    text-align: center; /* Center text in the section */
+}
+
+.team-section h3 {
+    font-size: 2.5em; /* Increase font size for the heading */
+    margin-bottom: 30px; /* Space below the heading */
+    color: #333; /* Dark text for better readability */
+}
+
+.team-container {
+    display: flex; /* Use flexbox for layout */
+    justify-content: center; /* Center items horizontally */
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+    gap: 40px; /* Space between team members */
+    padding: 0 20px; /* Add padding */
+}
+
+.team-member {
+    background-color: white; /* Background for each team member */
+    padding: 20px;
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Shadow for depth */
+    width: 200px; /* Set a fixed width for team members */
+    text-align: center; /* Center text in team member section */
+}
+
+.team-photo {
+    width: 100%; /* Make the image responsive */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 50%; /* Circular image */
+    margin-bottom: 15px; /* Space below the image */
+}
+
+/* What We Do Section */
+#what-we-do {
+    padding: 80px 20px;
+    background-color: rgba(255, 255, 255, 0.9);
+    text-align: center;
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+#what-we-do h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+#what-we-do .intro-text {
+    font-size: 1.2em;
+    max-width: 800px;
+    margin: 0 auto 40px auto;
+    line-height: 1.6;
+    color: #666;
+    padding: 0 20px;
+}
+
+.info-sections {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 40px;
+    padding: 20px 0;
+}
+
+.info-box {
+    position: relative; /* Set position to relative to position the pseudo-element */
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    flex: 1;
+    max-width: 300px;
+    text-align: left;
+    transition: transform 0.3s ease; /* Smooth transition for transform */
+}
+
+.info-box::before {
+    content: ''; /* Create an empty pseudo-element */
+    position: absolute;
+    top: -10px; /* Adjust position to create space for highlight */
+    left: -10px;
+    right: -10px;
+    bottom: -10px;
+    background-color: rgba(255, 102, 0, 0); /* Initial background color (invisible) */
+    border-radius: 15px; /* Match border radius */
+    transition: background-color 0.3s ease; /* Smooth transition for background color */
+    z-index: -1; /* Ensure it stays behind the content */
+}
+
+.info-box:hover {
+    transform: translateY(-10px); /* Lift effect on hover */
+}
+
+.info-box:hover::before {
+    background-color: rgba(255, 102, 0, 0.2); /* Light highlight color around the box */
+}
+
+.info-box h3 {
+    font-size: 1.5em;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.info-box p {
+    font-size: 1em;
+    color: #666;
+    line-height: 1.6;
+}
+
+.slideshow-container {
+    position: relative;
+    max-width: 800px; /* Adjust this width as needed */
+    margin: auto; /* Center the container */
+    overflow: hidden; /* Hide overflow for a neat look */
+}
+
+.mySlides {
+    display: none; /* Hide slides by default */
+    text-align: center; /* Center the text */
+}
+
+.slide-image {
+    width: 100%; /* Make images responsive */
+    height: auto; /* Maintain aspect ratio */
+    max-width: 100%; /* Ensure the images do not exceed their container */
+    max-height: 400px; /* Set a fixed height for the images */
+    object-fit: cover; /* Ensure the images cover the area without distortion */
+}
+
+.description {
+    margin-top: 10px; /* Space between image and description */
+    font-size: 16px; /* Font size for the description */
+}
+
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+}
+
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+.prev:hover, .next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Contact Form */
+
+#get-in-touch {
+    padding: 60px 20px;
+    background-color: #f9f9f9; /* Light background to distinguish the section */
+    text-align: center;
+  }
+  
+  #get-in-touch h2 {
+    font-size: 2rem;
+    margin-bottom: 30px;
+    color: #333;
+  }
+  
+  .contact-form {
+    max-width: 600px;
+    margin: 0 auto;
+    background: white;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Light shadow for a modern look */
+    border-radius: 8px;
+  }
+  
+  .form-group {
+    margin-bottom: 20px;
+  }
+  
+  .form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 1rem;
+    color: #333;
+  }
+  
+  .form-group input,
+  .form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 1rem;
+    color: #555;
+    background-color: #f7f7f7;
+    transition: border-color 0.3s ease;
+  }
+  
+  .form-group input:focus,
+  .form-group textarea:focus {
+    border-color: #007bff; /* Highlight border when focused */
+    outline: none;
+  }
+  
+  .submit-btn {
+    padding: 12px 30px;
+    background-color: #ff6600;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .submit-btn:hover {
+    background-color: #e65c00; /* Darker shade on hover */
+  }
+  
+
+/* Footer */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 50px;
+}
