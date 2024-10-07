@@ -21,6 +21,8 @@ changeBackground();
 setInterval(changeBackground, 5000);
 
 // Highlight navigation links on scroll
+
+// Highlight navigation links on scroll
 window.addEventListener('scroll', highlightNav);
 
 function highlightNav() {
@@ -33,18 +35,20 @@ function highlightNav() {
         const sectionTop = section.offsetTop;
         const sectionHeight = section.clientHeight;
 
-        if (scrollY >= sectionTop - sectionHeight / 3) {
+        // Check if the section is in view
+        if (scrollY >= sectionTop - sectionHeight / 3 && scrollY < sectionTop + sectionHeight) {
             currentSection = section.getAttribute('id');
         }
     });
 
     navLinks.forEach(link => {
-        link.classList.remove('active');
+        link.classList.remove('active'); // Remove active class from all links
         if (link.getAttribute('href').includes(currentSection)) {
-            link.classList.add('active');
+            link.classList.add('active'); // Add active class to the current link
         }
     });
 }
+
 
 // Smooth scroll to sections
 document.querySelectorAll('nav ul li a').forEach(anchor => {
@@ -87,6 +91,69 @@ function displaySlides() {
 // Start the slideshow
 displaySlides();
 
+// Select all dropdown buttons
+const dropdownButtons = document.querySelectorAll('.dropdown-btn');
+
+// Add click event listener to each button
+dropdownButtons.forEach(button => {
+    button.addEventListener('click', function() {
+        const organization = this.parentElement;
+        organization.classList.toggle('active'); // Toggle the active class
+    });
+});
+
+
+function initMap() {
+    // Create a map centered on a specific location (e.g., Kingston)
+    const center = { lat: 17.9973, lng: -76.7936 }; // Adjust this to your desired center point
+    const map = new google.maps.Map(document.getElementById("map"), {
+        zoom: 8,
+        center: center,
+    });
+
+    // Locations to highlight (replace these with your actual locations)
+    const locations = [
+        { lat: 18.0179, lng: -76.7976, name: "Constant Spring" },
+        { lat: 17.9685, lng: -76.8963, name: "Portmore" },
+        { lat: 18.0317, lng: -77.1004, name: "Santa Cruz" },
+        { lat: 18.0208, lng: -76.9708, name: "Jackson Town" },
+        { lat: 18.2719, lng: -77.1551, name: "Black River" },
+        { lat: 18.0158, lng: -76.9751, name: "Cross Roads" },
+        { lat: 17.9633, lng: -77.1924, name: "May Pen" },
+        { lat: 18.3885, lng: -77.0252, name: "Savanna-la-mar" },
+        { lat: 17.8720, lng: -77.2185, name: "Chapleton" },
+        { lat: 18.1854, lng: -76.4446, name: "Port Antonio" },
+        { lat: 18.4446, lng: -77.0230, name: "Christiana" },
+        { lat: 18.4270, lng: -76.6625, name: "St.Ann's Bay" },
+        { lat: 18.0797, lng: -76.5295, name: "Morant Bay" },
+        { lat: 18.2677, lng: -77.1830, name: "Lucea" },
+        { lat: 18.3586, lng: -77.3298, name: "Port Morant" },
+        { lat: 18.0312, lng: -77.5497, name: "Mandeville" },
+        { lat: 18.4656, lng: -77.9138, name: "Montego Bay" },
+        { lat: 17.9574, lng: -77.1244, name: "Old Harbour" },
+        { lat: 18.0835, lng: -76.6875, name: "Port Maria" },
+        { lat: 18.0052, lng: -76.8013, name: "Downtown Kingston" },
+        { lat: 18.4690, lng: -77.6767, name: "Falmouth" },
+        { lat: 18.1055, lng: -76.8981, name: "Buff Bay" },
+        { lat: 18.0201, lng: -77.4090, name: "Lionel Town" },
+        { lat: 18.0823, lng: -77.0564, name: "Linstead" },
+        { lat: 18.2743, lng: -76.8982, name: "Brown's Town" },
+        { lat: 18.0258, lng: -77.2242, name: "Moneague" },
+        // Add more locations as needed
+    ];
+
+    // Add markers for each location
+    locations.forEach(location => {
+        const marker = new google.maps.Marker({
+            position: { lat: location.lat, lng: location.lng },
+            map: map,
+            title: location.name,
+        });
+    });
+}
+
+// Call the initMap function when the window loads
+window.onload = initMap;
 
 
 

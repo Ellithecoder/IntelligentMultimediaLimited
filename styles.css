@@ -11,12 +11,13 @@ body {
 }
 
 /* Navigation Bar */
+/* General navigation styling */
 nav {
     position: fixed;
     top: 0;
     width: 100%;
-    background-color: rgba(51, 51, 51, 0.9); /* Slight transparency for modern effect */
-    padding: 10px 0;
+    background-color: rgba(111, 120, 170, 0.3); /* Slight transparency */
+    padding: 15px 0;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -25,15 +26,24 @@ nav {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Modern shadow */
 }
 
-/* Logo alignment fix */
+/* Logo alignment */
 nav .logo {
     position: absolute;
     left: 20px;
-    top: 50%; /* Center vertically */
-    transform: translateY(-50%); /* Adjust for vertical centering */
+    top: 50%;
+    transform: translateY(-50%);
     display: flex;
-    align-items: center; /* Ensures proper vertical alignment */
+    align-items: center;
 }
+
+/* Adjust logo alignment for smaller screens */
+@media (max-width: 768px) {
+    nav .logo {
+        left: 10px; /* Adjust the logo position for smaller screens */
+        width: 100px; /* Optional: Adjust logo width if needed */
+    }
+}
+
 
 nav .logo img {
     height: 50px;
@@ -54,7 +64,7 @@ nav ul li {
 }
 
 nav ul li a {
-    color: white;
+    color: #233e98;
     text-decoration: none;
     font-weight: 600;
     font-size: 1.1em;
@@ -62,12 +72,12 @@ nav ul li a {
 }
 
 nav ul li a:hover {
-    color: #ff6600;
+    color: #e0272a;
 }
 
 /* Highlighted link when the section is active */
 nav ul li a.active {
-    color: #ff6600; /* Highlight color */
+    color: #e0272a; /* Highlight color */
     font-weight: 700; /* Make the active link bold */
 }
 
@@ -101,6 +111,7 @@ nav ul li a.active {
 
 /* Hero Section */
 .hero {
+    margin-top: 59px;
     height: 100vh;
     position: relative;
     display: flex;
@@ -168,7 +179,7 @@ nav ul li a.active {
 /* Button styling */
 .hero .btn {
     padding: 12px 25px;
-    background-color: #ff6600;
+    background-color: #233e98;
     color: white;
     border: none;
     text-decoration: none;
@@ -180,7 +191,7 @@ nav ul li a.active {
 }
 
 .hero .btn:hover {
-    background-color: #e65c00;
+    background-color: #233e98;
     transform: translateY(-5px); /* Slight lift on hover */
 }
 
@@ -222,7 +233,6 @@ section {
     z-index: 1;                             /* Ensure sections are stacked correctly */
 }
 
-
 #about, #services, #portfolio, #contact {
     margin-top: 50px;
 }
@@ -233,105 +243,143 @@ h2 {
 }
 
 /* Who We Are Section */
+
 #about {
-    background-color: rgba(255, 255, 255, 0.9); /* Transparent white background */
-    padding: 80px 20px; /* Ensure consistent padding */
-    text-align: center;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* Add shadow for depth */
-    border-radius: 15px; /* Smooth edges */
+    background-color: rgba(35, 62, 152, 0.1); /* Light background for a modern look */
+    padding: 50px 20px;
 }
 
-#about h2 {
-    font-size: 2.5em;
-    margin-bottom: 20px;
-    color: #333; /* Dark text for better readability */
-}
-
-#about p {
-    font-size: 1.2em; /* Increase font size for better readability */
-    line-height: 1.6; /* Improve line spacing */
-    color: #666; /* Softer color for text */
-    max-width: 800px; /* Limit width for better readability */
-    margin: 0 auto; /* Center the paragraph */
-    padding: 0 20px; /* Add some padding */
-}
-
-/* Flexbox for layout */
 .about-container {
-    display: flex; /* Use flexbox for layout */
-    flex-direction: column; /* Stack text vertically */
-    align-items: center; /* Center items horizontally */
-    justify-content: center; /* Center items vertically */
-    padding: 0 20px; /* Add padding */
+    max-width: 1200px;
+    margin: auto;
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    align-items: center;
+    gap: 40px; /* Space between elements */
 }
 
-/* IML Info Section Styling */
+.about-text {
+    text-align: center;
+    font-family: 'Poppins', sans-serif; /* Change to Poppins for consistency */
+    color: #333; /* Darker color for better readability */
+    padding: 20px; /* Add padding for spacing */
+    background-color: rgba(255, 255, 255, 0.1); /* White background with slight transparency */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0); /* Subtle shadow */
+}
+
+.about-text h2 {
+    font-size: 2.5rem;
+    color: #233e98; /* Company blue for heading */
+    margin-bottom: 20px;
+}
+
+.about-text p {
+    font-size: 1.2rem; /* Increased font size for readability */
+    line-height: 1.8; /* More line height for better readability */
+    color: #555; /* Darker gray for readability */
+}
+
+
+.about-image {
+    margin: 20px 0;
+}
+
+.about-image img {
+    max-width: 100%;
+    border-radius: 10px;
+    transition: transform 0.3s ease; /* Smooth image transition */
+}
+
+.about-image img:hover {
+    transform: scale(1.05); /* Slight zoom on hover */
+}
+
+.benefits-section {
+    width: 100%;
+    text-align: center; /* Center the heading */
+}
+
+.benefits-title {
+    font-size: 2rem;
+    color: #233e98; /* Company blue for benefits heading */
+    margin-bottom: 20px;
+}
+
+.benefits {
+    display: flex; /* Use flexbox for horizontal alignment */
+    justify-content: space-between; /* Evenly space the items */
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+    gap: 20px; /* Space between benefit items */
+    width: 100%;
+    max-width: 1200px; /* Optional: max width to prevent stretching */
+    margin: auto; /* Center the benefits section */
+}
+
+.benefit-item {
+    background-color: #fff; /* White background for each benefit */
+    padding: 20px;
+    margin: 15px; /* Space around each item */
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for cards */
+    transition: transform 0.3s ease; /* Smooth transition */
+    flex: 1 1 220px; /* Flex-grow, flex-shrink, flex-basis for responsiveness */
+}
+
+.benefit-item:hover {
+    transform: translateY(-5px); /* Lift effect on hover */
+}
+
+.benefit-item i {
+    font-size: 2rem; /* Icon size */
+    color: #e71e25; /* Company red for icons */
+}
+
+.benefit-item h3 {
+    margin: 10px 0;
+    color: #233e98; /* Company blue for subheadings */
+}
+
+.benefit-item p {
+    color: #555; /* Darker gray for benefit descriptions */
+}
+
+.iml-info {
+    width: 100%;
+    text-align: center;
+    margin-top: 30px;
+}
+
 .iml-info h3 {
-    font-size: 1.8em;
-    margin-top: 40px;
-    color: #333; /* Consistent color */
+    font-size: 1.8rem;
+    color: #233e98; /* Company blue for IML info heading */
 }
 
 .iml-info ul {
-    list-style-type: disc;
-    padding-left: 20px; /* Add padding to indent the list */
-    font-size: 1.2em; /* Slightly larger text for readability */
-    color: #666; /* Softer text color */
-    line-height: 1.8; /* Space out the list items */
+    list-style-type: none;
+    padding: 0;
 }
 
-.iml-info ul li {
-    margin-bottom: 10px; /* Space between each list item */
+.iml-info li {
+    font-size: 1.1rem;
+    color: #333; /* Classy dark gray for readability */
+    margin: 5px 0;
 }
 
-/* Team Section Styles */
-.team-section {
-    text-align: center; /* Center the section title */
-    margin: 55px 0; /* Add space above and below the section */
-}
+/* Responsive Design */
+@media (max-width: 768px) {
+    .about-container {
+        flex-direction: column; /* Stack items vertically */
+    }
 
-/* Team Container Styles */
-.team-container {
-    display: flex;
-    flex-wrap: wrap; /* Allow members to wrap to the next line */
-    justify-content: center; /* Center the team members */
+    .benefits {
+        flex-direction: column; /* Stack items vertically on smaller screens */
+    }
+    
+    .benefit-item {
+        max-width: none; /* Remove max width to allow full width on smaller screens */
+    }
 }
-
-/* Individual Team Member Styles */
-.team-member {
-    background-color: #ffffff; /* Set a background color */
-    border-radius: 15px; /* Round the edges */
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* Floating effect */
-    margin: 15px; /* Space between team members */
-    padding: 20px; /* Inner spacing */
-    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transitions */
-    width: 250px; /* Fixed width for each member box */
-}
-
-/* Pop-out and Hover Effect */
-.team-member:hover {
-    transform: translateY(-10px); /* Pop out effect */
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3); /* Enhance shadow on hover */
-}
-
-/* Team Member Photo */
-.team-photo {
-    width: 100%; /* Make photo responsive */
-    border-radius: 50%; /* Round photo */
-    margin-bottom: 15px; /* Space below the photo */
-}
-
-/* Team Member Title */
-h4 {
-    font-weight: bold; /* Bold title */
-    margin: 10px 0 5px; /* Margin for spacing */
-}
-
-/* Team Member Description */
-.team-member p {
-    color: #777; /* Slightly lighter text */
-}
-
 
 /* What We Do Section */
 
@@ -374,6 +422,157 @@ h4 {
     }
 }
 
+/* Flex container for the organization and tax office sections */
+
+/* Main container styling */
+#organizations-locations {
+    padding: 40px 20px;
+    background-color: #f1f1f1; /* Light background for contrast */
+    text-align: center; /* Center everything in this section */
+}
+
+/* Center the heading */
+#organizations-locations h3 {
+    font-size: 24px;
+    color: #233e98; /* Header color */
+    margin-bottom: 40px; /* Space below the heading */
+    text-align: center; /* Ensure it's centered */
+}
+
+/* Create a grid layout for organizations */
+.organizations {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Responsive grid with minimum size */
+    gap: 20px; /* Space between grid items */
+    justify-items: center; /* Center grid items */
+}
+
+/* Organization styling */
+.organization {
+    width: 100%; /* Make buttons take up the same width */
+    max-width: 300px; /* Limit the maximum width of each button */
+}
+
+/* Dropdown button styling */
+.dropdown-btn {
+    background-color: #233e98; /* Company primary color */
+    color: white;
+    padding: 12px 24px;
+    font-size: 16px;
+    border: none;
+    border-radius: 8px; /* Rounded corners */
+    width: 100%; /* Full width for buttons */
+    text-align: left; /* Align text to the left */
+    display: flex;
+    justify-content: space-between; /* Space between text and icon */
+    align-items: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth transition */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Light shadow */
+}
+
+/* Dropdown content styling */
+.dropdown-content {
+    display: none; /* Initially hidden */
+    background-color: white; /* White background for contrast */
+    padding: 12px;
+    border-radius: 8px; /* Match button rounding */
+    margin-top: 6px; /* Space between button and dropdown */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Shadow for dropdown */
+}
+
+/* Show dropdown on hover */
+.organization:hover .dropdown-content {
+    display: block; /* Show dropdown on hover */
+}
+
+/* Add hover effect for dropdown button */
+.dropdown-btn:hover {
+    background-color: #e71e25; /* Change background on hover */
+    transform: translateY(-2px); /* Slight lift */
+}
+
+/* Active button focus effect */
+.dropdown-btn:focus {
+    outline: none;
+    box-shadow: 0 0 0 4px rgba(35, 62, 152, 0.2); /* Focus ring */
+}
+
+/* Styling for dropdown items */
+.dropdown-content p {
+    margin: 6px 0;
+    color: #333; /* Text color */
+}
+
+/* Highlight on hover for dropdown items */
+.dropdown-content p:hover {
+    background-color: #e0e0e0; /* Highlight on hover */
+    border-radius: 4px; /* Slightly rounded corners */
+}
+
+
+/* Center the heading and the dropdown button in the Tax Office section */
+.tax-office-section {
+    display: flex; /* Use flexbox */
+    flex-direction: column; /* Stack items vertically */
+    align-items: center; /* Center items horizontally */
+    text-align: center; /* Center text */
+    margin-top: 60px; /* Space above the section */
+}
+
+
+/* Tax Office dropdown content organized in grid layout */
+.tax-office-section .dropdown-content {
+    background-color: white; /* White background */
+    padding: 12px; /* Padding around the content */
+    border-radius: 8px; /* Rounded corners */
+    margin-top: 6px; /* Space between button and dropdown */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Shadow for dropdown */
+    max-width: 1000px; /* Set a maximum width for dropdown */
+    margin: 6px auto; /* Center the dropdown */
+}
+
+/* Dropdown grid layout */
+.dropdown-grid {
+    display: grid; /* Use grid layout */
+    grid-template-columns: repeat(5, 1fr); /* 5 columns in the grid */
+    gap: 10px; /* Space between grid items */
+}
+
+/* Centering the dropdown items */
+.dropdown-grid p {
+    margin: 0;
+    padding: 10px;
+    color: #333; /* Text color */
+    background-color: #f9f9f9; /* Background for dropdown items */
+    border-radius: 4px; /* Rounded corners */
+    text-align: center; /* Center text */
+    transition: background-color 0.3s ease; /* Smooth transition for hover */
+}
+
+/* Hover effect for dropdown items */
+.dropdown-grid p:hover {
+    background-color: #e0e0e0; /* Change background on hover */
+}
+
+
+/* Additional global styles */
+.what-we-do-content {
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.item {
+    width: 30%;
+}
+
+h3 {
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+
 
 /* Our Work Section */
 
@@ -409,41 +608,52 @@ h4 {
     transform: scale(1.05); /* Slightly enlarge box on hover */
 }
 
-/* Organizations and locations section */
-
-.org-locations {
-    margin-top: 20px; 
-    text-align: center; /* Center text */
-    background-color: #f1f1f1; /* Light background */
-    padding: 20px; /* Padding around the section */
-    border-radius: 8px; /* Rounded corners */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Soft shadow */
+#our-partners {
+    padding: 60px 20px;
+    text-align: center; /* Center the header */
+    background-color: #f9f9f9; /* Light background color */
 }
 
-.org-locations h3 {
-    font-size: 24px; /* Larger heading */
-    font-weight: bold; /* Bold text */
-    margin-bottom: 15px; /* Space below heading */
+#our-partners h3 {
+    font-size: 24px;
+    color: #233e98; /* Header color */
+    margin-bottom: 20px;
 }
 
-.org-locations ul {
-    list-style-type: none; /* Remove default bullets */
-    padding: 0; /* Remove padding */
+.partners-container {
+    display: flex; /* Use flexbox to arrange images */
+    justify-content: center; /* Center the images */
+    flex-wrap: wrap; /* Allow wrapping for smaller screens */
+    gap: 20px; /* Space between images */
 }
 
-.org-locations li {
-    padding: 10px; /* Padding for list items */
-    border-bottom: 1px solid #ddd; /* Separator line */
+.partners-container img {
+    width: 160px; /* Set a fixed width for uniformity */
+    height: 140px; /* Set a fixed height for uniformity */
+    object-fit: contain; /* Ensure the entire image is visible without stretching */
+    border-radius: 8px; /* Optional: add rounded corners */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Light shadow */
+    transition: transform 0.3s; /* Transition for hover effect */
 }
 
-.org-locations li:hover {
-    background-color: #e0e0e0; /* Highlight on hover */
+.partners-container img:hover {
+    transform: scale(1.05); /* Slightly enlarge on hover */
 }
 
+/* Responsive adjustments */
+@media (max-width: 768px) { /* For tablets */
+    .partners-container img {
+        width: 100px; /* Adjust width for smaller screens */
+        height: 100px; /* Adjust height for smaller screens */
+    }
+}
 
-
-
-
+@media (max-width: 480px) { /* For mobile devices */
+    .partners-container img {
+        width: 80px; /* Adjust width for mobile */
+        height: 80px; /* Adjust height for mobile */
+    }
+}
 
 /* Contact Form */
 
@@ -499,7 +709,7 @@ h4 {
   
   .submit-btn {
     padding: 12px 30px;
-    background-color: #ff6600;
+    background-color: #233e98;
     color: white;
     border: none;
     border-radius: 6px;
@@ -509,14 +719,14 @@ h4 {
   }
   
   .submit-btn:hover {
-    background-color: #e65c00; /* Darker shade on hover */
+    background-color: #e71e25; /* Darker shade on hover */
   }
   
 
 /* Footer */
 footer {
-    background-color: #333;
-    color: white;
+    background-color: rgba(111, 120, 170, 0.3);
+    color: #233e98;
     text-align: center;
     padding: 20px;
     margin-top: 50px;

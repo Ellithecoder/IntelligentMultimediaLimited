@@ -6,6 +6,8 @@
     <title>Intelligent Multimedia Limited </title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCXbZ5izn4OhnVZQFpdyYT9uo7t0HBNlHM"></script>
+
 
     <link rel="icon" href="images/favicon.png" type="image/x-icon">
 </head>
@@ -14,7 +16,7 @@
     <!-- Navigation -->
     <nav>
         <div class="logo"> 
-            <a href="#home" id="Home" class="logo">
+            <a href="/" id="Home" class="logo">
                 <img src="images/logo.png" alt="Company Logo">
             </a>
             
@@ -31,7 +33,7 @@
             <a href="sales@imlja.net" class="contact-item">
                 <i class="fas fa-envelope"></i> sales@imlja.net
             </a>
-            <a href="tel:+1234567890" class="contact-item">
+            <a href="tel:+8769068479" class="contact-item">
                 <i class="fas fa-phone"></i> +876 906 8479
             </a>
         </div>
@@ -52,83 +54,223 @@
 
 <!-- About Us Section -->
 <section id="about">
-    <h2>Who We Are</h2>
     <div class="about-container">
-       <!--  <img src="images/slide3.jpg" alt="About Us Image"> Replace with your actual image -->
-        <p> Intelligent Multimedia Limited (IML), is Jamaica’s largest Indoor Digital Advertising
-            Network which reaches over 1+ million viewers
-            monthly, based on impressions. In addition, IML
-            recently launched its newest digital asset with a
-            (36’) high-definition Outdoor video board in the
-            heart of Jamaica’s financial and entertainment
-            district, Knutsford Blvd.; targeting approximately
-            500,000 viewers monthly.</p>
-    </div>
-
-    <div class="iml-info"></div>
-        <h3>IML Advertising Benefits:</h3>
-        <ul>
-            <li>IML’s Network loops every 8 minutes</li>
-            <li>Adverts are aired 8 times per hour approx.</li>
-            <li>Adverts are aired 64 times within an 8-hour workday approx.</li>
-            <li>Adverts are aired 1408 times within a month approx.</li>
-        </ul>
-    </div>
-
-    <div class="team-section">
-        <h3>The Team</h3>
-        <div class="team-container">
-            <div class="team-member">
-                <img src="images/team.jpg" alt="Member 1" class="team-photo"> <!-- Placeholder image -->
-                <h4>Andrew Pairman</h4>
-                <p>Position: CEO Description of member 1.</p>
-            </div>
-            <div class="team-member">
-                <img src="images/team.jpg" alt="Member 2" class="team-photo"> <!-- Placeholder image -->
-                <h4>Marc Robinson </h4>
-                <p>Position:General Manager Description of member 2.</p>
-            </div>
-            <div class="team-member">
-                <img src="images/team.jpg" alt="Member 3" class="team-photo"> <!-- Placeholder image -->
-                <h4>Robert Pairman </h4>
-                <p>Chief Technology Officer Description of member 3.</p>
-            </div>
-            <div class="team-member">
-                <img src="images/team.jpg" alt="Member 4" class="team-photo"> <!-- Placeholder image -->
-                <h4> S.Patterson </h4>
-                <p>Position: Description of member 4.</p>
-            </div>
-        </div>
-    </div>
-    
-
-</section>
+         <div class="about-text">
+             <h2>WHO WE ARE</h2>
+             <div class="about-image">
+                <!--<img src="images/team-photo.jpg" alt="Our Team">-->
+             </div>
+             <p>
+                 Intelligent Multimedia Limited (IML), is Jamaica’s largest Indoor Digital Advertising
+                 Network which reaches over 1+ million viewers
+                 monthly, based on impressions. In addition, IML
+                 recently launched its newest digital asset with a
+                 (36’) high-definition Outdoor video board in the
+                 heart of Jamaica’s financial and entertainment
+                 district, Knutsford Blvd.; targeting approximately
+                 500,000 viewers monthly.
+             </p>
+             <p> At IML, we operate a cutting-edge digital signage network that helps brands enhance visibility and engagement through
+                 Digital Out-of-Home (DOOH) advertising. 
+             </p>
+         </div>
+ 
+         <div class="benefits-section">
+             <h2 class="benefits-title">BENEFITS of DOOH</h2>
+             <div class="benefits">
+                 <div class="benefit-item">
+                     <i class="fas fa-eye"></i>
+                     <h3>Unparalleled Visibility</h3>
+                     <p>
+                         Our DOOH networks span high-traffic locations such as government departments, urban centers, and commercial spaces. 
+                         By integrating your advertising messages into these strategic areas, your business can reach a wide range of audiences,
+                         from professionals to everyday commuters, maximizing your brand's exposure. 
+                     </p>
+                 </div>
+ 
+                 <div class="benefit-item">
+                     <i class="fas fa-sync-alt"></i>
+                     <h3>Real-Time Flexibility</h3>
+                     <p>
+                         With dynamic content management systems, your business can instantly adjust its messaging in response to emerging trends and 
+                         market updates.  
+                     </p>
+                 </div>
+ 
+                 <div class="benefit-item">
+                     <i class="fas fa-bullhorn"></i>
+                     <h3>Enhanced Public Engagement</h3>
+                     <p>
+                         DOOH signage allows your business to utilize immersive visuals and dynamic storytelling to capture the public's attention.
+                         With content that educates and informs, your business can effectively communicate its key services to drive greater awareness
+                         and understanding among its target audience.   
+                     </p>
+                 </div>
+ 
+                 <div class="benefit-item">
+                     <i class="fas fa-chart-line"></i>
+                     <h3>Measurable Impact</h3>
+                     <p>
+                         The success of your advertising can be tracked using advanced data analytics, providing insights into audience reach,
+                         impressions, and engagement.
+                     </p>
+                 </div>
+             </div>
+         </div>
+ 
+         <div class="iml-info">
+             <h3>Why Choose IML:</h3>
+             <ul>
+                 <li>IML’s Network loops every 8 minutes</li>
+                 <li>Adverts are aired 8 times per hour approx.</li>
+                 <li>Adverts are aired 64 times within an 8-hour workday approx.</li>
+                 <li>Adverts are aired 1408 times within a month approx.</li>
+             </ul>
+         </div> 
+     </div>
+ </section>
 
     <!-- Services Section -->
-
     <section id="what-we-do">
         <h2>What We Do</h2>
-        <p class= "what-we-do-introduction">
+        <p class="what-we-do-introduction">
             In today’s rapidly moving world, connecting with consumers on the go is essential, and digital out-of-home (DOOH) advertising is the ideal solution. IML uses strategically placed dynamic digital screens in high-traffic areas to deliver compelling advertising that captures the attention of audiences while they are on the move.
         </p>
+    
         <div class="what-we-do-content">
             <div class="item">
                 <i class="fas fa-users"></i> <!-- Icon for Audience -->
                 <h3>Audience</h3>
-                <p>OOH media can be targeted by market and demographic, allowing brands to pinpoint accurately who they need to reach, then reach them consistently.</p>
+                <p>DOOH media can be targeted by market and demographic, allowing brands to pinpoint accurately who they need to reach, then reach them consistently.</p>
             </div>
             <div class="item">
                 <i class="fas fa-map-marker-alt"></i> <!-- Icon for Location -->
                 <h3>Location</h3>
-                <p>As location infiltrates all media formats, OOH remains the most established location-based expert. OOH’s targeted locations allow Brands to maximize on the recency of messaging – prompting Consumer Purchases in that moment. Location is considered the best indicator of consumer intent.</p>
+                <p>As location infiltrates all media formats, DOOH remains the most established location-based expert. DOOH’s targeted locations allow Brands to maximize on the recency of messaging – prompting Consumer Purchases in that moment. Location is considered the best indicator of consumer intent.</p>
             </div>
             <div class="item">
                 <i class="fas fa-eye"></i> <!-- Icon for Viewability -->
                 <h3>Viewability</h3>
-                <p>OOH is 100% viewable. Our inventory reaches consumers in the real world and is never susceptible to ad blocking. Ensure your brand’s story is seen in an impactful way.</p>
+                <p>DOOH is 100% viewable. Our inventory reaches consumers in the real world and is never susceptible to ad blocking. Ensure your brand’s story is seen in an impactful way.</p>
             </div>
         </div>
+
+        <div id="organizations-locations">
+            <h3>Organizations and Locations</h3>
+        
+            <div class="organizations">
+                <div class="organization">
+                    <button class="dropdown-btn">WESTERN UNION (1) <i class="fas fa-chevron-down"></i></button>
+                    <div class="dropdown-content">
+                        <p>MANOR PARK</p>
+                    </div>
+                </div>
+        
+                <div class="organization">
+                    <button class="dropdown-btn">GENERAL FOODS (1) <i class="fas fa-chevron-down"></i></button>
+                    <div class="dropdown-content">
+                        <p>Ocho Rios</p>
+                    </div>
+                </div>
+        
+                <div class="organization">
+                    <button class="dropdown-btn">HI-LO SUPERMARKET (4) <i class="fas fa-chevron-down"></i></button>
+                    <div class="dropdown-content">
+                        <p>Pavillion Center (Half Way Tree)</p>
+                        <p>Barbican</p>
+                        <p>Cross Roads</p>
+                        <p>Manor Park</p>
+                    </div>
+                </div>
+        
+                <div class="organization">
+                    <button class="dropdown-btn">TASTEE (9) <i class="fas fa-chevron-down"></i></button>
+                    <div class="dropdown-content">
+                        <p>Stony Hill</p>
+                        <p>Patrick City</p>
+                        <p>Knutsford Blvd (New Kingston)</p>
+                        <p>Papine</p>
+                        <p>Portmore</p>
+                        <p>Spanish Town (Burke Road)</p>
+                        <p>Barnett St. (Montego Bay)</p>
+                        <p>Cross Roads</p>
+                        <p>Half Way Tree</p>
+                    </div>
+                </div>
+        
+                <div class="organization">
+                    <button class="dropdown-btn">SUGAR AND SPICE (3) <i class="fas fa-chevron-down"></i></button>
+                    <div class="dropdown-content">
+                        <p>Red Hills Road</p>
+                        <p>Liguanea</p>
+                        <p>Constant Spring</p>
+                    </div>
+                    
+                </div>
+
+                <div class="organization">
+                    <button class="dropdown-btn">KINGSTON WHARVES (1) <i class="fas fa-chevron-down"></i></button>
+                    <div class="dropdown-content">
+                        <p>Kingport Building (Newport West)</p>
+                    </div>
+                </div>
+
+                <div class="organization">
+                    <button class="dropdown-btn">SOUTH REGIONAL HEALTH AUTHORITY (1) <i class="fas fa-chevron-down"></i></button>
+                    <div class="dropdown-content">
+                        <p>Mandeville</p>
+                    </div>
+                </div>
+            </div>
+
+            </div>
+        </div>
+    
+            
+        <div class="tax-office-section">
+            <h3>Tax Office Locations</h3>
+            <h3> 27 Locations Island-Wide</h3>
+        
+            <div class="organization">
+                <button class="dropdown-btn">TAX OFFICES <i class="fas fa-chevron-down"></i></button>
+                <div class="dropdown-content">
+                    <div class="dropdown-grid">
+                        <p>Constant Spring</p>
+                        <p>Portmore</p>
+                        <p>Santa Cruz</p>
+                        <p>Jackson Town</p>
+                        <p>Black River</p>
+                        <p>Cross Roads</p>
+                        <p>May Pen</p>
+                        <p>Savanna-la-mar</p>
+                        <p>Chapleton</p>
+                        <p>Port Antonio</p>
+                        <p>Christiana</p>
+                        <p>St.Ann's Bay</p>
+                        <p>Morant Bay</p>
+                        <p>Lucea</p>
+                        <p>Port Morant</p>
+                        <p>Mandeville</p>
+                        <p>Montego Bay</p>
+                        <p>Old Harbour</p>
+                        <p>Port Maria</p>
+                        <p>Downtown Kingston</p>
+                        <p>Falmouth</p>
+                        <p>Buff Bay</p>
+                        <p>Lionel Town</p>
+                        <p>Linstead</p>
+                        <p>Brown's Town</p>
+                        <p>Moneague</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        
     </section>
+
+    <div id="map" style="height: 500px; width: 100%;"></div>
+    
     
 
     <!-- Portfolio Section -->
@@ -177,26 +319,23 @@
                 <div class="text">Work 10 Description</div>
             </div>
         </div>
-        <div class="org-locations">
-            <h3>Organizations and Locations</h3>
-            <ul>
-                <li>Western Union - Manor Park</li>
-                <li>General Foods - Ocho Rios</li>
-                <li>Hi-Lo Supermarket - Pavilion Center (Half Way Tree), Barbican, Cross Roads, Manor Park</li>
-                <li>Tastee - Stony Hill, Patrick City, Knutsford Blvd. (New Kingston), Papine, Portmore, Spanish Town (Burke Road), Barnett St. (Montego Bay), Cross Roads, Half Way Tree</li>
-                <li>Sugar and Spice - Red Hills Road, Liguanea, Constant Spring</li>
-                <li>Kingston Wharves - Kingport Building (Newport West)</li>
-                <li>South Regional Health Authority - Mandeville</li>
-            </ul>
-        </div>
-    </section>
     
-    
-    
-    
-    
-    
-    
+        <section id="our-partners">
+            <h3>Our Partners</h3>
+            <div class="partners-container">
+                <img src="images/westernunion.png" alt="Partner 1" />
+                <img src="images/generalfood.png" alt="Partner 2" />
+                <img src="images/hilo.png" alt="Partner 3" />
+                <img src="images/taj.png" alt="Partner 4" />
+                <img src="images/sugarandspice.png" alt="Partner 5" />
+                <img src="images/kingstonwharves.png" alt="Partner 6" />
+                <img src="images/southregional.png" alt="Partner 7" />
+                <img src="images/medicalassociates.png" alt="Partner 8" />
+                <img src="images/tastee.png" alt="Partner 8" />
+                <!-- Add more partner images as needed -->
+            </div>
+        </section>
+        
     
     <!-- Contact Section -->
    
