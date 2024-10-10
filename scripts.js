@@ -104,43 +104,50 @@ dropdownButtons.forEach(button => {
 
 
 function initMap() {
-    // Create a map centered on a specific location (e.g., Kingston)
+    // Create a map centered on a specific location
     const center = { lat: 17.9973, lng: -76.7936 }; // Adjust this to your desired center point
     const map = new google.maps.Map(document.getElementById("map"), {
         zoom: 8,
         center: center,
     });
 
-    // Locations to highlight (replace these with your actual locations)
+    // Locations to highlight
     const locations = [
-        { lat: 18.0179, lng: -76.7976, name: "Constant Spring" },
-        { lat: 17.9685, lng: -76.8963, name: "Portmore" },
-        { lat: 18.0317, lng: -77.1004, name: "Santa Cruz" },
-        { lat: 18.0208, lng: -76.9708, name: "Jackson Town" },
-        { lat: 18.2719, lng: -77.1551, name: "Black River" },
-        { lat: 18.0158, lng: -76.9751, name: "Cross Roads" },
-        { lat: 17.9633, lng: -77.1924, name: "May Pen" },
-        { lat: 18.3885, lng: -77.0252, name: "Savanna-la-mar" },
-        { lat: 17.8720, lng: -77.2185, name: "Chapleton" },
-        { lat: 18.1854, lng: -76.4446, name: "Port Antonio" },
-        { lat: 18.4446, lng: -77.0230, name: "Christiana" },
-        { lat: 18.4270, lng: -76.6625, name: "St.Ann's Bay" },
-        { lat: 18.0797, lng: -76.5295, name: "Morant Bay" },
-        { lat: 18.2677, lng: -77.1830, name: "Lucea" },
-        { lat: 18.3586, lng: -77.3298, name: "Port Morant" },
-        { lat: 18.0312, lng: -77.5497, name: "Mandeville" },
-        { lat: 18.4656, lng: -77.9138, name: "Montego Bay" },
-        { lat: 17.9574, lng: -77.1244, name: "Old Harbour" },
-        { lat: 18.0835, lng: -76.6875, name: "Port Maria" },
-        { lat: 18.0052, lng: -76.8013, name: "Downtown Kingston" },
-        { lat: 18.4690, lng: -77.6767, name: "Falmouth" },
-        { lat: 18.1055, lng: -76.8981, name: "Buff Bay" },
-        { lat: 18.0201, lng: -77.4090, name: "Lionel Town" },
-        { lat: 18.0823, lng: -77.0564, name: "Linstead" },
-        { lat: 18.2743, lng: -76.8982, name: "Brown's Town" },
-        { lat: 18.0258, lng: -77.2242, name: "Moneague" },
+        { lat: 18.04322, lng: -76.79467, 
+            name: "Constant Spring Tax Office", 
+            info: "Information about the Constant Spring Tax Office and Work IML did there",
+            img: "images/slide8.jpg"
+        },
+        { lat: 17.96270, lng: -76.89633, name: "Portmore Tax Office" },
+        { lat: 18.05080, lng: -77.69878, name: "Santa Cruz Tax Office" },
+        { lat: 18.41398, lng: -77.48699, name: "Jackson Town Tax Office" },
+        { lat: 18.2719, lng: -77.1551, name: "Black River Tax Office" },
+        { lat: 17.99605, lng: -76.78673, name: "Cross Roads Tax Office" },
+        { lat: 17.9633, lng: -77.1924, name: "May Pen Tax Office" },
+        { lat: 18.3885, lng: -77.0252, name: "Savanna-la-mar Tax Office" },
+        { lat: 17.8720, lng: -77.2185, name: "Chapleton Tax Office" },
+        { lat: 18.17155, lng: -76.44762, name: "Port Antonio Tax Office" },
+        { lat: 18.17099, lng: -77.49128, name: "Christiana Tax Office" },
+        { lat: 18.43787, lng: -77.20090, name: "St.Ann's Bay Tax Office" },
+        { lat: 18.0797, lng: -76.5295, name: "Morant Bay Tax Office" },
+        { lat: 18.2677, lng: -77.1830, name: "Lucea Tax Office" },
+        { lat: 18.3586, lng: -77.3298, name: "Port Morant Tax Office" },
+        { lat: 18.0312, lng: -77.5497, name: "Mandeville Tax Office" },
+        { lat: 18.4656, lng: -77.9138, name: "Montego Bay Tax Office" },
+        { lat: 17.9574, lng: -77.1244, name: "Old Harbour Tax Office" },
+        { lat: 18.0835, lng: -76.6875, name: "Port Maria Tax Office" },
+        { lat: 18.0052, lng: -76.8013, name: "Downtown Kingston Tax Office" },
+        { lat: 18.4690, lng: -77.6767, name: "Falmouth Tax Office" },
+        { lat: 18.1055, lng: -76.8981, name: "Buff Bay Tax Office" },
+        { lat: 18.0201, lng: -77.4090, name: "Lionel Town Tax Office" },
+        { lat: 18.0823, lng: -77.0564, name: "Linstead Tax Office" },
+        { lat: 18.2743, lng: -76.8982, name: "Brown's Town Tax Office" },
+        { lat: 18.0258, lng: -77.2242, name: "Moneague Office" },
+        { lat: 17.99833, lng: -76.92916, name: "Spanish Town Tax Office" },
         // Add more locations as needed
     ];
+
+    let activeInfoWindow = null; // Track the currently active infoWindow
 
     // Add markers for each location
     locations.forEach(location => {
@@ -149,11 +156,31 @@ function initMap() {
             map: map,
             title: location.name,
         });
-    });
-}
 
+        // Create an InfoWindow for each location
+const infoWindow = new google.maps.InfoWindow({
+    content: `
+                <div style="width: 300px; padding: 15px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); background-color: white; border-radius: 8px;">
+                    <h3 style="font-size: 18px; font-family: Arial, sans-serif; color: #233e98; margin-bottom: 10px;">${location.name}</h3>
+                    <p style="font-size: 14px; font-family: Arial, sans-serif; color: #333; margin-bottom: 10px;">
+                        ${location.info || "No additional info available."}
+                    </p>
+                    ${location.img ? `<img src="${location.img}" alt="${location.name}" style="width: 100%; height: auto; border-radius: 4px;"/>` : ""}
+                </div>
+            `
+});
+marker.addListener("click", () => {
+    console.log("Marker clicked: " + location.name); // Log marker clicks for debugging
+    if (activeInfoWindow){
+        activeInfoWindow.close();
+    }
+    infoWindow.open(map, marker);
+    activeInfoWindow = infoWindow;
+});
+
+    });
+
+}
 // Call the initMap function when the window loads
 window.onload = initMap;
-
-
 
