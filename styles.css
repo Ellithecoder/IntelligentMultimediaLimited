@@ -10,13 +10,12 @@ body {
     background-color: #f4f4f4; /* Consistent background color */
 }
 
-/* Navigation Bar */
 /* General navigation styling */
 nav {
     position: fixed;
     top: 0;
     width: 100%;
-    background-color: rgba(111, 120, 170, 0.3); /* Slight transparency */
+    background: linear-gradient(135deg, rgba(224, 39, 42, 0.8), rgba(35, 62, 152, 0.8)); /* Glossy gradient with transparency */
     padding: 15px 0;
     display: flex;
     align-items: center;
@@ -36,21 +35,38 @@ nav .logo {
     align-items: center;
 }
 
-/* Adjust logo alignment for smaller screens */
-@media (max-width: 768px) {
-    nav .logo {
-        left: 10px; /* Adjust the logo position for smaller screens */
-        width: 100px; /* Optional: Adjust logo width if needed */
-    }
-}
-
-
 nav .logo img {
     height: 50px;
     width: auto;
 }
 
+/* Contact info styling */
+.contact-info {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    gap: 15px;
+}
 
+.contact-item {
+    color: #fff;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+}
+
+.contact-item i {
+    margin-right: 5px;
+}
+
+.contact-item:hover {
+    color: #ff6600;
+}
+
+/* Navigation links */
 nav ul {
     list-style: none;
     margin: 0;
@@ -64,7 +80,7 @@ nav ul li {
 }
 
 nav ul li a {
-    color: #233e98;
+    color: #fff;
     text-decoration: none;
     font-weight: 600;
     font-size: 1.1em;
@@ -75,50 +91,90 @@ nav ul li a:hover {
     color: #e0272a;
 }
 
-/* Highlighted link when the section is active */
 nav ul li a.active {
-    color: #e0272a; /* Highlight color */
-    font-weight: 700; /* Make the active link bold */
+    color: #e0272a;
+    font-weight: 700;
 }
 
-/* Wrapper for contact info */
-.contact-info {
+/* Hamburger icon */
+.hamburger {
+    display: none; /* Hidden by default */
+    font-size: 24px;
+    color: white;
     position: absolute;
-    right: 20px; /* Adjust this value based on how far from the right edge you want it */
+    right: 20px;
     top: 50%;
-    transform: translateY(-50%); /* Vertically center the contact info */
-    display: flex;
-    gap: 15px;
+    transform: translateY(-50%);
+    cursor: pointer;
 }
 
-/* Contact info styling */
-.contact-item {
-    color: #fff;
-    text-decoration: none;
-    display: flex;
-    align-items: center;
-    font-weight: bold;
+/* Responsive Navbar for smaller screens */
+@media (max-width: 768px) {
+    nav ul {
+        display: none; /* Hide menu */
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        flex-direction: column;
+        background-color: rgba(35, 62, 152, 0.95); /* Dark background */
+        text-align: center;
+        padding: 10px 0;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+
+    nav ul.show {
+        display: flex; /* Show menu when active */
+    }
+
+    .hamburger {
+        display: block; /* Show hamburger on smaller screens */
+    }
 }
 
-.contact-item i {
-    margin-right: 5px; /* Space between icon and text */
+/* Adjust logo alignment for smaller screens */
+@media (max-width: 768px) {
+    nav .logo {
+        left: 10px;
+        width: 100px;
+    }
 }
 
-.contact-item:hover {
-    color: #ff6600; /* Hover effect */
-}
+
+
 
 
 /* Hero Section */
 .hero {
-    margin-top: 59px;
-    height: 100vh;
+    margin-top: 58px;
+    height: 85vh;
     position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
     color: white;
     text-align: center;
+}
+
+.slideshow-container {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.slide {
+    display: none;
+    width: 100%;
+    height: 100%;
+}
+
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures the image fits properly */
 }
 
 /* Hero Section Background */
@@ -206,23 +262,24 @@ nav ul li a.active {
     100% { opacity: 1; transform: translateY(0); }
 }
 
+/* Gradient header styling */
+.gradient-heading {
+    background: linear-gradient(135deg, rgba(255, 0, 0, 0.8), rgba(0, 0, 255, 0.8)); /* Red to blue gradient */
+    background-clip: text;
+    -webkit-background-clip: text; /* For compatibility */
+    -webkit-text-fill-color: transparent; /* Transparent text color */
+    text-align: center; /* Center the text */
+    font-size: 2em; /* Adjust font size as needed */
+    margin: 20px 0; /* Add some margin around the headings */
+}
+
+
 
 /* Sections*/
 section {
     padding: 80px 20px;
     text-align: center;
     background-color: #f4f4f4; /* Consistent background color */
-}
-
-/* Global Box Model Adjustment */
-*,
-*::before,
-*::after {
-    box-sizing: border-box;
-}
-
-/* Section Styling for Consistent Layout */
-section {
     position: relative;                      /* Ensures stacking is based on document flow */
     margin: px 0;                         /* Adds space between sections */
     padding: 20px 0;                        /* Adds padding within each section */
@@ -230,7 +287,16 @@ section {
     transition: background-color 0.3s ease-in-out; /* Smooth transition for background color */
     overflow: visible;                       /* Ensures that content won't be cut off */
     height: auto;                           /* Allows the section to grow based on its content */
-    z-index: 1;                             /* Ensure sections are stacked correctly */
+    z-index: 1;  
+
+}
+
+
+/* Global Box Model Adjustment */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
 }
 
 #about, #services, #portfolio, #contact {
@@ -244,126 +310,102 @@ h2 {
 
 /* Who We Are Section */
 
-#about {
-    background-color: rgba(35, 62, 152, 0.1); /* Light background for a modern look */
-    padding: 50px 20px;
+.who-we-are-section {
+    background: linear-gradient(135deg, rgba(255, 0, 0, 0.7), rgba(0, 0, 255, 0.7)); /* Gradient with transparency */
+    border: 2px solid rgba(255, 255, 255, 0.8); /* Light border */
+    padding: 40px 20px; /* Spacing */
+    margin: 20px 0; /* Margin around the section */
+    border-radius: 10px; /* Rounded corners for modern look */
 }
 
 .about-container {
-    max-width: 1200px;
-    margin: auto;
     display: flex;
-    flex-direction: column; /* Stack items vertically */
+    flex-direction: column;
     align-items: center;
-    gap: 40px; /* Space between elements */
-}
-
-.about-text {
-    text-align: center;
-    font-family: 'Poppins', sans-serif; /* Change to Poppins for consistency */
-    color: #333; /* Darker color for better readability */
-    padding: 20px; /* Add padding for spacing */
-    background-color: rgba(255, 255, 255, 0.1); /* White background with slight transparency */
-    border-radius: 10px; /* Rounded corners */
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0); /* Subtle shadow */
-}
-
-.about-text h2 {
-    font-size: 2.5rem;
-    color: #233e98; /* Company blue for heading */
-    margin-bottom: 20px;
-}
-
-.about-text p {
-    font-size: 1.2rem; /* Increased font size for readability */
-    line-height: 1.8; /* More line height for better readability */
-    color: #555; /* Darker gray for readability */
-}
-
-
-.about-image {
-    margin: 20px 0;
+    text-align: center; /* Center text */
 }
 
 .about-image img {
-    max-width: 100%;
-    border-radius: 10px;
-    transition: transform 0.3s ease; /* Smooth image transition */
-}
-
-.about-image img:hover {
-    transform: scale(1.05); /* Slight zoom on hover */
+    width: 100%; /* Responsive image */
+    max-width: 500px; /* Limit image size */
+    border-radius: 10px; /* Rounded corners for image */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Shadow effect */
+    margin: 20px 0; /* Margin around image */
 }
 
 .benefits-section {
-    width: 100%;
-    text-align: center; /* Center the heading */
+    margin-top: 30px; /* Space above benefits section */
 }
 
 .benefits-title {
-    font-size: 2rem;
-    color: #233e98; /* Company blue for benefits heading */
-    margin-bottom: 20px;
+    font-size: 1.8em; /* Larger title */
+    margin-bottom: 20px; /* Space below title */
+    color: #0a0a0a; /* Color to match company theme */
 }
 
 .benefits {
-    display: flex; /* Use flexbox for horizontal alignment */
-    justify-content: space-between; /* Evenly space the items */
-    flex-wrap: wrap; /* Allow wrapping on smaller screens */
-    gap: 20px; /* Space between benefit items */
-    width: 100%;
-    max-width: 1200px; /* Optional: max width to prevent stretching */
-    margin: auto; /* Center the benefits section */
+    display: flex;
+    flex-wrap: wrap; /* Wrap items in smaller screens */
+    justify-content: center; /* Center benefits items */
 }
 
 .benefit-item {
-    background-color: #fff; /* White background for each benefit */
+    background: rgba(255, 255, 255, 0.7); /* Background with transparency */
+    border: 1px solid rgba(0, 0, 0, 0.1); /* Subtle border */
+    border-radius: 10px; /* Rounded corners */
     padding: 20px;
-    margin: 15px; /* Space around each item */
-    border-radius: 10px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for cards */
-    transition: transform 0.3s ease; /* Smooth transition */
-    flex: 1 1 220px; /* Flex-grow, flex-shrink, flex-basis for responsiveness */
+    margin: 10px; /* Space between items */
+    text-align: left; /* Align text to the left */
+    width: 300px; /* Fixed width for items */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Shadow effect */
+    opacity: 0; /* Start hidden */
+    animation: fadeIn 0.5s forwards; /* Apply fade-in animation */
+}
+
+/* Animation delay for each item */
+.benefit-item:nth-child(1) {
+    animation-delay: 0.3s; /* Delay for the first item */
+}
+.benefit-item:nth-child(2) {
+    animation-delay: 0.6s; /* Delay for the second item */
+}
+.benefit-item:nth-child(3) {
+    animation-delay: 0.9s; /* Delay for the third item */
+}
+.benefit-item:nth-child(4) {
+    animation-delay: 0.12s; /* Delay for the fourth item */
+}
+
+.benefit-item:nth-child(5) {
+    animation-delay: 0.15s; /* Delay for the fourth item */
+}
+
+.benefit-item:nth-child(6) {
+    animation-delay: 0.818; /* Delay for the fourth item */
+}
+
+.benefit-item:nth-child(7) {
+    animation-delay: 0.21s; /* Delay for the fourth item */
 }
 
 .benefit-item:hover {
-    transform: translateY(-5px); /* Lift effect on hover */
+    transform: translateY(-5px) scale(1.05); /* Scale up on hover */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
 }
 
 .benefit-item i {
-    font-size: 2rem; /* Icon size */
-    color: #e71e25; /* Company red for icons */
+    font-size: 2em; /* Larger icons */
+    color: #e0272a; /* Icon color */
+    margin-bottom: 10px; /* Space below icons */
 }
 
 .benefit-item h3 {
-    margin: 10px 0;
-    color: #233e98; /* Company blue for subheadings */
+    font-size: 1.5em; /* Increase heading size */
+    margin: 10px 0; /* Margin above and below headings */
 }
 
 .benefit-item p {
-    color: #555; /* Darker gray for benefit descriptions */
-}
-
-.iml-info {
-    width: 100%;
-    text-align: center;
-    margin-top: 30px;
-}
-
-.iml-info h3 {
-    font-size: 1.8rem;
-    color: #233e98; /* Company blue for IML info heading */
-}
-
-.iml-info ul {
-    list-style-type: none;
-    padding: 0;
-}
-
-.iml-info li {
-    font-size: 1.1rem;
-    color: #333; /* Classy dark gray for readability */
-    margin: 5px 0;
+    font-size: 1em; /* Normal text size */
 }
 
 /* Responsive Design */
@@ -381,48 +423,148 @@ h2 {
     }
 }
 
+/* Animation keyframes */
+@keyframes fadeIn {
+    to {
+        opacity: 1; /* Fully visible */
+    }
+}
 /* What We Do Section */
-
-.what-we-do-content {
-    display: flex; /* Use flexbox for horizontal layout */
-    justify-content: space-between; /* Space out items evenly */
-    margin-top: 20px; /* Space above the section */
-}
-
-.item {
-    flex: 1; /* Each item takes up equal space */
+#what-we-do {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.8), rgba(0, 0, 0, 0.1)); /* Background gradient */
+    padding: 40px 20px; /* Padding around the section */
     text-align: center; /* Center text */
-    padding: 20px; /* Padding for spacing */
-    background-color: #f9f9f9; /* Light background color */
-    border: 1px solid #ddd; /* Optional border */
-    border-radius: 15px; /* Increased rounded corners for a softer look */
-    margin: 10px; /* Margin around items */
-    transition: transform 0.3s; /* Transition for hover effect */
 }
 
-.item i {
-    font-size: 40px; /* Icon size */
-    color: #007bff; /* Icon color */
-    margin-bottom: 10px; /* Space below the icon */
+.services-container {
+    display: flex;
+    justify-content: center; /* Center the boxes */
+    flex-wrap: wrap; /* Wrap items on smaller screens */
 }
 
-.item h3 {
-    font-size: 20px; /* Heading size */
-    margin: 10px 0; /* Space above and below heading */
+.service-box {
+    width: 300px; /* Fixed width for each box */
+    height: 400px; /* Fixed height for the box */
+    margin: 15px; /* Space between boxes */
+    perspective: 1000px; /* Perspective for the 3D effect */
+    position: relative; /* Relative positioning to maintain position */
 }
 
-.item:hover {
-    transform: scale(1.05); /* Slightly enlarge item on hover */
+.service-front, .service-back {
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    position: absolute; /* Positioning for flipping */
+    backface-visibility: hidden; /* Hide the back when facing away */
+    border: 2px solid rgba(255, 255, 255, 0.8); /* Border styling */
+    border-radius: 10px; /* Rounded corners */
+    transition: transform 0.6s; /* Transition for flipping effect */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Shadow effect */
+    display: flex; /* Flexbox for centering text */
+    align-items: center; /* Center items vertically */
+    justify-content: center; /* Center items horizontally */
+    transform-style: preserve-3d; /* Maintain 3D space for children */
+}
+
+.service-front {
+    background: transparent; /* No background since the image covers it */
+}
+
+.service-back {
+    background: rgba(0, 0, 0, 0.7); /* Background color for back */
+    color: white; /* Text color for back */
+    transform: rotateY(180deg); /* Flip the back */
+}
+
+.service-box:hover .service-front {
+    transform: rotateY(180deg); /* Flip front on hover */
+}
+
+.service-box:hover .service-back {
+    transform: rotateY(0deg); /* Show back on hover */
+}
+
+.service-front img {
+    width: 100%; /* Cover full width */
+    height: 100%; /* Cover full height */
+    object-fit: cover; /* Cover the box while maintaining aspect ratio */
+    position: absolute; /* Position the image absolutely */
+    top: 0; /* Align to top */
+    left: 0; /* Align to left */
+}
+
+.service-front h3 {
+    position: absolute; /* Absolute positioning */
+    bottom: 20px; /* Positioning from the bottom */
+    left: 50%; /* Center horizontally */
+    transform: translateX(-50%); /* Centering adjustment */
+    color: white; /* Text color */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7); /* Text shadow for readability */
+    background: rgba(0, 0, 0, 0.5); /* Background for text for contrast */
+    padding: 10px; /* Padding around text */
+    border-radius: 5px; /* Rounded corners for text background */
 }
 
 /* Responsive Design */
 @media (max-width: 768px) {
-    .what-we-do-content {
-        flex-direction: column; /* Stack items vertically on small screens */
+    .services-container {
+        flex-direction: column; /* Stack items vertically on smaller screens */
     }
 }
 
+/* Download Links*/
+.download-links {
+    text-align: center; /* Center the text */
+    margin-top: 30px; /* Space above download links */
+}
+
+.download-links h3 {
+    font-size: 1.8em; /* Larger title */
+    margin-bottom: 20px; /* Space below title */
+    color: #0a0a0a; /* Color to match company theme */
+}
+
+.download-links ul {
+    list-style: none; /* Remove default list style */
+    padding: 0; /* Remove padding */
+}
+
+.download-links ul li {
+    margin: 10px 0; /* Space between items */
+}
+
+.download-links a {
+    text-decoration: none; /* Remove underline */
+    color: #233e98; /* Link color */
+    font-weight: bold; /* Make text bold */
+    transition: color 0.3s; /* Smooth color transition */
+}
+
+.download-links a:hover {
+    color: #e0272a; /* Change color on hover */
+}
+
 /* Flex container for the organization and tax office sections */
+
+#organizations-locations {
+    text-align: center; /* Center the header */
+}
+
+#organizations-locations h2 {
+    background: linear-gradient(135deg, rgba(255, 0, 0, 0.8), rgba(0, 0, 255, 0.8)); /* Gradient for header */
+    background-clip: text; /* Standard property */
+   -webkit-background-clip: text;  /* Clip the background to the text */
+    -webkit-text-fill-color: transparent; /* Make text color transparent */
+    font-size: 2em; /* Adjust font size as needed */
+    margin: 20px 0; /* Margin around the header */
+}
+
+#organizations-locations i {
+    font-size: 2.0em; /* Adjust icon size */
+    color: #e0272a; /* Change icon color to white or as desired */
+    display: block; /* Ensure the icon appears above the header */
+    margin-bottom: 10px; /* Space between icon and header */
+}
+
 
 /* Main container styling */
 #organizations-locations {
@@ -519,7 +661,6 @@ h2 {
     text-align: center; /* Center text */
     margin-top: 60px; /* Space above the section */
 }
-
 
 /* Tax Office dropdown content organized in grid layout */
 .tax-office-section .dropdown-content {
@@ -725,8 +866,8 @@ h3 {
 
 /* Footer */
 footer {
-    background-color: rgba(111, 120, 170, 0.3);
-    color: #233e98;
+    background: linear-gradient(135deg, rgba(255, 0, 0, 0.7), rgba(0, 0, 255, 0.7)); /* Gradient with transparency */;
+    color: #fff;
     text-align: center;
     padding: 20px;
     margin-top: 50px;

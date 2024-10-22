@@ -7,6 +7,9 @@
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCXbZ5izn4OhnVZQFpdyYT9uo7t0HBNlHM"></script>
+    <!-- AOS CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.1/aos.css" />
+    
 
 
     <link rel="icon" href="images/favicon.png" type="image/x-icon">
@@ -21,12 +24,13 @@
             </a>
             
         </div>
-        <ul>
+        <ul class="nav-links">
             <li><a href="#home">Home</a></li>
             <li><a href="#about">About Us</a></li>
             <li><a href="#what-we-do">Services</a></li>
             <li><a href="#our-work">Portfolio</a></li>
             <li><a href="#get-in-touch">Contact</a></li>
+            
         </ul>
 
         <div class="contact-info">
@@ -36,6 +40,10 @@
             <a href="tel:+8769068479" class="contact-item">
                 <i class="fas fa-phone"></i> +876 906 8479
             </a>
+        </div>
+
+        <div class="hamburger">
+            <i class="fas fa-bars"></i>
         </div>
 
     </nav>
@@ -53,186 +61,211 @@
     </section>
 
 <!-- About Us Section -->
-<section id="about">
+<section id="about" data-aos="fade-up" class="who-we-are-section">
     <div class="about-container">
-         <div class="about-text">
-             <h2>WHO WE ARE</h2>
-             <div class="about-image">
-                <!--<img src="images/team-photo.jpg" alt="Our Team">-->
-             </div>
-             <p>
-                 Intelligent Multimedia Limited (IML), is Jamaica’s largest Indoor Digital Advertising
-                 Network which reaches over 1+ million viewers
-                 monthly, based on impressions. In addition, IML
-                 recently launched its newest digital asset with a
-                 (36’) high-definition Outdoor video board in the
-                 heart of Jamaica’s financial and entertainment
-                 district, Knutsford Blvd.; targeting approximately
-                 500,000 viewers monthly.
-             </p>
-             <p> At IML, we operate a cutting-edge digital signage network that helps brands enhance visibility and engagement through
-                 Digital Out-of-Home (DOOH) advertising. 
-             </p>
-         </div>
- 
-         <div class="benefits-section">
-             <h2 class="benefits-title">BENEFITS of DOOH</h2>
-             <div class="benefits">
-                 <div class="benefit-item">
-                     <i class="fas fa-eye"></i>
-                     <h3>Unparalleled Visibility</h3>
-                     <p>
-                         Our DOOH networks span high-traffic locations such as government departments, urban centers, and commercial spaces. 
-                         By integrating your advertising messages into these strategic areas, your business can reach a wide range of audiences,
-                         from professionals to everyday commuters, maximizing your brand's exposure. 
-                     </p>
-                 </div>
- 
-                 <div class="benefit-item">
-                     <i class="fas fa-sync-alt"></i>
-                     <h3>Real-Time Flexibility</h3>
-                     <p>
-                         With dynamic content management systems, your business can instantly adjust its messaging in response to emerging trends and 
-                         market updates.  
-                     </p>
-                 </div>
- 
-                 <div class="benefit-item">
-                     <i class="fas fa-bullhorn"></i>
-                     <h3>Enhanced Public Engagement</h3>
-                     <p>
-                         DOOH signage allows your business to utilize immersive visuals and dynamic storytelling to capture the public's attention.
-                         With content that educates and informs, your business can effectively communicate its key services to drive greater awareness
-                         and understanding among its target audience.   
-                     </p>
-                 </div>
- 
-                 <div class="benefit-item">
-                     <i class="fas fa-chart-line"></i>
-                     <h3>Measurable Impact</h3>
-                     <p>
-                         The success of your advertising can be tracked using advanced data analytics, providing insights into audience reach,
-                         impressions, and engagement.
-                     </p>
-                 </div>
-             </div>
-         </div>
- 
-         <div class="iml-info">
-             <h3>Why Choose IML:</h3>
-             <ul>
-                 <li>IML’s Network loops every 8 minutes</li>
-                 <li>Adverts are aired 8 times per hour approx.</li>
-                 <li>Adverts are aired 64 times within an 8-hour workday approx.</li>
-                 <li>Adverts are aired 1408 times within a month approx.</li>
-             </ul>
-         </div> 
-     </div>
- </section>
+        <div class="about-text">
+            <h2>WHO WE ARE</h2>
+            <p>
+                Intelligent Multimedia Limited (IML), is Jamaica’s largest Indoor Digital Advertising
+                Network which reaches over 1+ million viewers
+                monthly, based on impressions. In addition, IML
+                recently launched its newest digital asset with a
+                (36’) high-definition Outdoor video board in the
+                heart of Jamaica’s financial and entertainment
+                district, Knutsford Blvd.; targeting approximately
+                500,000 viewers monthly.
+            </p>
+            <p>At IML, we operate a cutting-edge digital signage network that helps brands enhance visibility and engagement through
+                Digital Out-of-Home (DOOH) advertising.
+            </p>
+        </div>
+
+        <div class="benefits-section" data-aos="fade-up">
+            <h2 class="benefits-title">Benefits of Digital Out-of-Home (DOOH)</h2>
+            <div class="benefits">
+                <div class="benefit-item">
+                    <i class="fas fa-eye"></i>
+                    <h3>Unparalleled Visibility</h3>
+                    <p>
+                        Our DOOH networks span high-traffic locations such as government departments, urban centers, and commercial spaces.
+                        By integrating your advertising messages into these strategic areas, your business can reach a wide range of audiences,
+                        from professionals to everyday commuters, maximizing your brand's exposure.
+                    </p>
+                </div>
+
+                <div class="benefit-item">
+                    <i class="fas fa-sync-alt"></i>
+                    <h3>Real-Time Flexibility</h3>
+                    <p>
+                        With dynamic content management systems, your business can instantly adjust its messaging in response to emerging trends and
+                        market updates.
+                    </p>
+                </div>
+
+                <div class="benefit-item">
+                    <i class="fas fa-bullhorn"></i>
+                    <h3>Enhanced Public Engagement</h3>
+                    <p>
+                        DOOH signage allows your business to utilize immersive visuals and dynamic storytelling to capture the public's attention.
+                        With content that educates and informs, your business can effectively communicate its key services to drive greater awareness
+                        and understanding among its target audience.
+                    </p>
+                </div>
+
+                <div class="benefit-item">
+                    <i class="fas fa-chart-line"></i>
+                    <h3>Measurable Impact</h3>
+                    <p>
+                        The success of your advertising can be tracked using advanced data analytics, providing insights into audience reach,
+                        impressions, and engagement.
+                    </p>
+                </div>
+
+                <div class="benefit-item">
+                    <i class="fas fa-users"></i> <!-- Icon for Audience -->
+                    <h3>Audience</h3>
+                    <p>DOOH media can be targeted by market and demographic, allowing brands to pinpoint accurately who they need to reach, then reach them consistently.</p>
+                </div>
+
+                <div class="benefit-item">
+                    <i class="fas fa-map-marker-alt"></i> <!-- Icon for Location -->
+                    <h3>Location</h3>
+                    <p>As location infiltrates all media formats, DOOH remains the most established location-based expert. DOOH’s targeted locations allow Brands to maximize on the recency of messaging – prompting Consumer Purchases in that moment. Location is considered the best indicator of consumer intent.</p>
+                </div>
+                
+                <div class="benefit-item">
+                    <i class="fas fa-eye"></i> <!-- Icon for Viewability -->
+                    <h3>Viewability</h3>
+                    <p>DOOH is 100% viewable. Our inventory reaches consumers in the real world and is never susceptible to ad blocking. Ensure your brand’s story is seen in an impactful way.</p>
+                </div>
+            </div>
+        
+            </div>
+        </div>
+    </div>
+</section>
 
     <!-- Services Section -->
-    <section id="what-we-do">
-        <h2>What We Do</h2>
+
+    <section id="what-we-do" data-aos="fade-up">
+        <h2 class="gradient-heading">WHAT WE DO</h2>
         <p class="what-we-do-introduction">
             In today’s rapidly moving world, connecting with consumers on the go is essential, and digital out-of-home (DOOH) advertising is the ideal solution. IML uses strategically placed dynamic digital screens in high-traffic areas to deliver compelling advertising that captures the attention of audiences while they are on the move.
         </p>
+        <div class="services-container">
+            <div class="service-box" data-aos="flip-left">
+                <div class="service-front">
+                    <img src="images/digital advertising.jpg" alt="Digital Advertising">
+                    <h3>DIGITAL ADVERTISING</h3>
+                </div>
+                <div class="service-back">
+                    <p>Our digital advertising services leverage cutting-edge technology to reach your target audience effectively.</p>
+                </div>
+            </div>
     
-        <div class="what-we-do-content">
-            <div class="item">
-                <i class="fas fa-users"></i> <!-- Icon for Audience -->
-                <h3>Audience</h3>
-                <p>DOOH media can be targeted by market and demographic, allowing brands to pinpoint accurately who they need to reach, then reach them consistently.</p>
-            </div>
-            <div class="item">
-                <i class="fas fa-map-marker-alt"></i> <!-- Icon for Location -->
-                <h3>Location</h3>
-                <p>As location infiltrates all media formats, DOOH remains the most established location-based expert. DOOH’s targeted locations allow Brands to maximize on the recency of messaging – prompting Consumer Purchases in that moment. Location is considered the best indicator of consumer intent.</p>
-            </div>
-            <div class="item">
-                <i class="fas fa-eye"></i> <!-- Icon for Viewability -->
-                <h3>Viewability</h3>
-                <p>DOOH is 100% viewable. Our inventory reaches consumers in the real world and is never susceptible to ad blocking. Ensure your brand’s story is seen in an impactful way.</p>
-            </div>
-        </div>
-
-        <div id="organizations-locations">
-            <h3>Organizations and Locations</h3>
-        
-            <div class="organizations">
-                <div class="organization">
-                    <button class="dropdown-btn">WESTERN UNION (1) <i class="fas fa-chevron-down"></i></button>
-                    <div class="dropdown-content">
-                        <p>MANOR PARK</p>
-                    </div>
+            <div class="service-box" data-aos="flip-left">
+                <div class="service-front">
+                    <img src="images/menu boards.jpg" alt="Menu Boards">
+                    <h3>MENU BOARDS</h3>
                 </div>
-        
-                <div class="organization">
-                    <button class="dropdown-btn">GENERAL FOODS (1) <i class="fas fa-chevron-down"></i></button>
-                    <div class="dropdown-content">
-                        <p>Ocho Rios</p>
-                    </div>
-                </div>
-        
-                <div class="organization">
-                    <button class="dropdown-btn">HI-LO SUPERMARKET (4) <i class="fas fa-chevron-down"></i></button>
-                    <div class="dropdown-content">
-                        <p>Pavillion Center (Half Way Tree)</p>
-                        <p>Barbican</p>
-                        <p>Cross Roads</p>
-                        <p>Manor Park</p>
-                    </div>
-                </div>
-        
-                <div class="organization">
-                    <button class="dropdown-btn">TASTEE (9) <i class="fas fa-chevron-down"></i></button>
-                    <div class="dropdown-content">
-                        <p>Stony Hill</p>
-                        <p>Patrick City</p>
-                        <p>Knutsford Blvd (New Kingston)</p>
-                        <p>Papine</p>
-                        <p>Portmore</p>
-                        <p>Spanish Town (Burke Road)</p>
-                        <p>Barnett St. (Montego Bay)</p>
-                        <p>Cross Roads</p>
-                        <p>Half Way Tree</p>
-                    </div>
-                </div>
-        
-                <div class="organization">
-                    <button class="dropdown-btn">SUGAR AND SPICE (3) <i class="fas fa-chevron-down"></i></button>
-                    <div class="dropdown-content">
-                        <p>Red Hills Road</p>
-                        <p>Liguanea</p>
-                        <p>Barbican</p>
-                    </div>
-                    
-                </div>
-
-                <div class="organization">
-                    <button class="dropdown-btn">KINGSTON WHARVES (1) <i class="fas fa-chevron-down"></i></button>
-                    <div class="dropdown-content">
-                        <p>Kingport Building (Newport West)</p>
-                    </div>
-                </div>
-
-                <div class="organization">
-                    <button class="dropdown-btn">SOUTHERN REGIONAL HEALTH AUTHORITY (1) <i class="fas fa-chevron-down"></i></button>
-                    <div class="dropdown-content">
-                        <p>Mandeville</p>
-                    </div>
+                <div class="service-back">
+                    <p>Enhance customer experience with our dynamic menu boards that showcase your offerings in real-time.</p>
                 </div>
             </div>
-
-            </div>
-        </div>
     
+            <div class="service-box" data-aos="flip-left">
+                <div class="service-front">
+                    <img src="images/sme.jpg" alt="SME">
+                    <h3>SME</h3>
+                </div>
+                <div class="service-back">
+                    <p>Our SME solutions provide tailored services to help small and medium enterprises grow and thrive.</p>
+                </div>
+            </div>
+
+            <div class="download-links">
+                <h4> Click the links below to download our brochures to get more innformation on our Services.</h4>
+                <ul>
+                    <li><a href="brochures/IML MediaKit.pdf" download>Digital Advertising Brochure</a></li>
+                    <li><a href="path/to/menu-boards-brochure.pdf" download>Menu Boards Brochure</a></li>
+                    <li><a href="brochures/IML SME Flyer.pdf" download>SME Brochure</a></li>
+                </ul>
+            </div>
             
-        <div class="tax-office-section">
-            <h3>Tax Office Locations</h3>
-            <h3> 27 Locations Island-Wide</h3>
-        
+
+        </div>
+    </section>
+    
+
+ <!-- Locations Section -->
+    <section id="organizations-locations" data-aos="fade-up">
+        <i class="fas fa-map-marker-alt"></i>
+        <h2> Locations</h2>
+        <div class="organizations">
             <div class="organization">
-                <button class="dropdown-btn">TAX OFFICES <i class="fas fa-chevron-down"></i></button>
+                <button class="dropdown-btn">WESTERN UNION (1) <i class="fas fa-chevron-down"></i></button>
+                <div class="dropdown-content">
+                    <p>MANOR PARK</p>
+                </div>
+            </div>
+            
+            <div class="organization">
+                <button class="dropdown-btn">GENERAL FOODS (1) <i class="fas fa-chevron-down"></i></button>
+                <div class="dropdown-content">
+                    <p>Ocho Rios</p>
+                </div>
+            </div>
+    
+            <div class="organization">
+                <button class="dropdown-btn">HI-LO SUPERMARKET (4) <i class="fas fa-chevron-down"></i></button>
+                <div class="dropdown-content">
+                    <p>Pavillion Center (Half Way Tree)</p>
+                    <p>Barbican</p>
+                    <p>Cross Roads</p>
+                    <p>Manor Park</p>
+                </div>
+            </div>
+    
+            <div class="organization">
+                <button class="dropdown-btn">TASTEE (9) <i class="fas fa-chevron-down"></i></button>
+                <div class="dropdown-content">
+                    <p>Stony Hill</p>
+                    <p>Patrick City</p>
+                    <p>Knutsford Blvd (New Kingston)</p>
+                    <p>Papine</p>
+                    <p>Portmore</p>
+                    <p>Spanish Town (Burke Road)</p>
+                    <p>Barnett St. (Montego Bay)</p>
+                    <p>Cross Roads</p>
+                    <p>Half Way Tree</p>
+                </div>
+            </div>
+    
+            <div class="organization">
+                <button class="dropdown-btn">SUGAR AND SPICE (3) <i class="fas fa-chevron-down"></i></button>
+                <div class="dropdown-content">
+                    <p>Red Hills Road</p>
+                    <p>Liguanea</p>
+                    <p>Barbican</p>
+                </div>
+            </div>
+    
+            <div class="organization">
+                <button class="dropdown-btn">KINGSTON WHARVES (1) <i class="fas fa-chevron-down"></i></button>
+                <div class="dropdown-content">
+                    <p>Kingport Building (Newport West)</p>
+                </div>
+            </div>
+    
+            <div class="organization">
+                <button class="dropdown-btn">SOUTHERN REGIONAL HEALTH AUTHORITY (1) <i class="fas fa-chevron-down"></i></button>
+                <div class="dropdown-content">
+                    <p>Mandeville</p>
+                </div>
+            </div>
+    
+            <div class="organization">
+                <button class="dropdown-btn">TAX OFFICES (27) <i class="fas fa-chevron-down"></i></button>
                 <div class="dropdown-content">
                     <div class="dropdown-grid">
                         <p>Constant Spring</p>
@@ -266,18 +299,15 @@
                 </div>
             </div>
         </div>
-        
-        
     </section>
+    
 
     <div id="map" style="height: 500px; width: 100%;"></div>
     
-    
-
     <!-- Portfolio Section -->
     
-    <section id="our-work">
-        <h2>Our Work</h2>
+    <section id="our-work" data-aos="fade-up">
+        <h2 class="gradient-heading"> Our Work</h2>
         <div class="work-container">
             <div class="work-box">
                 <img src="images/slide1.jpg" alt="Work 1 Description" class="work-image">
@@ -321,8 +351,8 @@
             </div>
         </div>
     
-        <section id="our-partners">
-            <h3>Our Partners</h3>
+        <section id="our-partners" data-aos="fade-up">
+            <h3 class="gradient-heading">Our Partners</h3>
             <div class="partners-container">
                 <img src="images/westernunion.png" alt="Partner 1" />
                 <img src="images/generalfood.png" alt="Partner 2" />
@@ -340,8 +370,8 @@
     
     <!-- Contact Section -->
    
-    <section id="get-in-touch">
-        <h2>Get in Touch</h2>
+    <section id="get-in-touch" data-aos="fade-up">
+        <h2 class="gradient-heading">Get in Touch</h2>
         <form class="contact-form">
           <div class="form-group">
             <label for="name">Name</label>
@@ -371,8 +401,10 @@
     <!-- Footer -->
     <footer>
         <p>&copy; 2024 Intelligent Multimedia. All rights reserved.</p>
-    </footer>
 
+
+    </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.1/aos.js"></script>
     <script src="scripts.js"></script>
 </body>
 </html>

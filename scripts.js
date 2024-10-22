@@ -1,3 +1,10 @@
+const hamburger = document.querySelector('.hamburger');
+const navLinks = document.querySelector('.nav-links');
+
+hamburger.addEventListener('click', () => {
+    navLinks.classList.toggle('show');
+});
+
 const images = [
     'images/slide2.jpg', 
     'images/slide1.jpg', 
@@ -180,6 +187,12 @@ marker.addListener("click", () => {
 
     });
 
+    AOS.init({
+        duration: 1500, // Animation duration (optional)
+        easing: 'ease-in-out', // Animation easing (optional)
+        once: false, // Whether animation should happen only once (optional)
+        // You can add more options here as needed
+    });
 }
 // Call the initMap function when the window loads
 window.onload = initMap;
